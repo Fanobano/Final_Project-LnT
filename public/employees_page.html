@@ -1,0 +1,168 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <style>
+        .navbar-brand img{
+            width: 100px;
+            height: 30px;
+        }
+
+        .card img{
+            height: 250px;
+        }
+
+        .button-style{
+            background: #272829;
+            padding: 10px 40px 10px 40px; 
+            color: white; 
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        body {
+            background-color: #272829;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .text1{
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block; 
+            white-space: nowrap;
+        }
+
+        li{
+            list-style-type: none;
+        }
+        .navbar{
+            background-color: #61677A;
+        }
+
+        .nav-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            border-radius: 20px;
+            background-color: whitesmoke;
+            margin-bottom: 50px;
+            height: 450px;
+        }
+
+        .card-img-top{
+            width: 300px;
+            height: 100px;
+            margin-left: 60px;
+            margin-top: 30px;
+        }
+
+        .clickable-card {
+            transition: background-color 0.3s ease;
+        }
+
+        .clickable-card:hover {
+            background-color: #000000; 
+        }
+
+        .clickable-card:hover .text_rectangle {
+            color: #ffffff; 
+        }
+
+        .clickable-card:hover .card-img-top {
+            filter: invert(1); 
+        }
+
+        .card-title{
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid d-flex align-items-center">
+            <ul class="d-flex" style="margin-top: 20px;">
+                <li class="nav-item" style="margin-right: 120px; margin-left: 460px;">
+                    <a class="text1" aria-current="page" href="employees_page.html">Show All</a>
+                </li>
+                <li class="nav-item" style="margin-right: 120px;">
+                    <a class="text1" href="add_employees.html">Add</a>
+                </li>
+                <li class="nav-item" style="margin-right: 330px;">
+                    <a class="text1" href="update_employees.html">Update</a>
+                </li>
+                <li class="nav-item" style="margin-left: auto;">
+                    <a class="button-style" href="homepage.html">Go Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="add_employees.html" class="card clickable-card" id="add-employee-card"> 
+                    <img src="🦆 icon _plus_.blackpng.png" class="card-img-top" alt="Employee Image">
+                    <div class="card-body text-center rectangle3">
+                        <h3 class="text_rectangle" style="margin-top: 50px;">Add New Employees</h3>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Employee Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Name:</strong> <span id="profileName"></span></p>
+                    <p><strong>Age:</strong> <span id="profileAge"></span></p>
+                    <p><strong>Address:</strong> <span id="profileAddress"></span></p>
+                    <p><strong>Phone Number:</strong> <span id="profilePhone"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const card = document.getElementById('add-employee-card');
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-20px)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html> -->
