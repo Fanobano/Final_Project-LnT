@@ -120,7 +120,7 @@
         }
 
     </style>
-    <title>View Employee</title>
+    <title>View Book</title>
 </head>
 <body>
     <div class="gif-background"></div>
@@ -132,15 +132,13 @@
     </nav>
 
     <div class="cards-container">
-        @foreach ($employees as $e)
+        @foreach ($category as $c)
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $e->name }} ({{ $e->age }})</h5>
-                    <p class="card-text"> Address: {{ $e->address }}</p>
-                    <p class="card-text" style="margin-bottom: 20px;">Phone number: {{ $e->phone }}</p>
+                    <h5 class="card-title">{{ $c->category_name }}</h5>
                     <div class="d-flex flex-column">
-                        <a href="{{ route('editPage', ['id'=>$e->id]) }}" class="btn btn-warning">See Details & Edit</a>
-                        <form method="POST" action="{{ route('deleteEmployee', ['id'=>$e->id]) }}">
+                        <a href="{{ route('editPage', ['id'=>$c->id]) }}" class="btn btn-warning">See Details & Edit</a>
+                        <form method="POST" action="{{ route('delete_category', ['id'=>$c->id]) }}">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>

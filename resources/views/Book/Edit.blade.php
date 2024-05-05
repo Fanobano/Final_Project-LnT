@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Employee</title>
+    <title>Edit Book</title>
     <style>
         body {
             background-color: #272829;
@@ -38,7 +38,6 @@
             justify-content: center;
             align-items: center;
         }
-
 
         .navbar a:hover {
             color: #cccccc; 
@@ -104,10 +103,10 @@
         <a href="{{ route('viewPage') }}">Back</a> 
     </nav>
 
-
     <div class="container">
-        <form method="POST" action="{{route('store')}}">
+        <form method="POST" action="{{ route('updateBook', ['id'=>$book->id]) }}" enctype="multipart/form_data">
             @csrf
+            @method('PATCH')
             <div class="form-group">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" id="name" name="name" class="form-control" required>
@@ -116,28 +115,26 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" id="age" name="age" class="form-control" required>
-                @error('age')
+                <label for="price" class="form-label">Price</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+                @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" id="address" name="address" class="form-control">
-                @error('address')
+                <label for="age" class="form-label">Stock</label>
+                <input type="number" id="stock" name="stock" class="form-control" required>
+                @error('stock')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="number" id="phone" name="phone" class="form-control">
-                @error('phone')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+                <label for="age" class="form-label">Image</label>
+                <input type="file" id="stock" name="image" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
+
 </body>
 </html>

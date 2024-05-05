@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Employee</title>
+    <title>Add Books</title>
     <style>
         body {
             background-color: #272829;
@@ -38,6 +38,7 @@
             justify-content: center;
             align-items: center;
         }
+
 
         .navbar a:hover {
             color: #cccccc; 
@@ -103,44 +104,48 @@
         <a href="{{ route('viewPage') }}">Back</a> 
     </nav>
 
+
     <div class="container">
-        <form method="POST" action="{{ route('updateEmployee', ['id'=>$employee->id]) }}">
+        <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
             @csrf
-            @method('PATCH')
             <div class="form-group">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $employee->name }}">
+                <input type="text" id="name" name="name" class="form-control" required>
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" name="age" value="{{ $employee->age }}">
-                @error('age')
+                <label for="name" class="form-label">Category</label>
+                <input type="text" id="category" name="category" class="form-control" required>
+                @error('category')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ $employee->address }}">
-                @error('address')
+                <label for="price" class="form-label">Price</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+                @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" name="phone" pattern="08[0-9]{8,11}" required
-                oninvalid="if (this.value.trim() === '') {this.setCustomValidity('Mohon mengisi bagian nomor telefon'); } else if(this.value.trim().length < 10 || this.value.trim().length > 13) {this.setCustomValidity('Nomor telefon hanya memiliki minimal 10 angka dan maksimal 13 angka'); }"
-                oninput="if (this.value.trim() === '') {this.setCustomValidity('Mohon mengisi bagian nomor telefon'); } else if (!/^08/.test(this.value.trim())) { this.setCustomValidity('Nomor telefon harus dimulai dengan 08...'); } else if(this.value.trim().length < 10 || this.value.trim().length > 13) {this.setCustomValidity('Nomor telefon hanya memiliki minimal 10 angka dan maksimal 13 angka'); } else {this.setCustomValidity(''); }">
-
-                @error('phone')
+                <label for="age" class="form-label">Stock</label>
+                <input type="number" id="stock" name="stock" class="form-control" required>
+                @error('stock')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <div class="form-group">
+                <label for="age" class="form-label">Image</label>
+                <input type="file" id="stock" name="image" class="form-control" required>
+            </div>
+            @error('image')
+                <p>{{ $message}}</p>
+            @enderror
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
 </body>
 </html>

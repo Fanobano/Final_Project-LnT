@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'employees';
-
     protected $fillable = [
-        'name',
-        'age',
-        'address',
-        'phone'
+        'category_name'
     ];
+
+    public function book(){
+        return $this->hasMany(Book::class, 'category_id');
+    }
+
 }

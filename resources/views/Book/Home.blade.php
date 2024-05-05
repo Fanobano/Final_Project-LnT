@@ -86,7 +86,7 @@
         }
 
         .text_rectangle{
-            margin-bottom: 70px;
+            margin-bottom: 220px;
             font-size: 30px;
             color: white;
         }
@@ -99,10 +99,49 @@
             filter: invert(100%);
         }
 
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(33, 37, 43, 0.8);
+            padding: 10px 0px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            color: #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; 
+        }
+
+        .navbar a {
+            color: #ffffff; 
+            text-decoration: none;
+            margin-right: 50px;
+            margin-left: 50px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .navbar a:hover {
+            color: #cccccc; 
+        }
+
     </style>
 
 </head>
 <body>
+    <nav class="navbar">    
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
+        <a href="{{ route('logout') }}">Logout</a>
+    </nav>
+
     <div class="gif-background"></div>
 
     <div class="container">
@@ -119,22 +158,19 @@
     <div id="secondSection" class="container">
         <a href="{{ route('viewPage') }}" style="display: inline-block; text-decoration: none;">
             <div class="rectangle2 opposite-color" id="rectangle2" style="position: relative;">
-                <img src="🦆 icon _person_.png" alt="" style="position: absolute; margin-bottom: 150px;">
-                <h1 class="text_rectangle" style="position: relative;">Show Employees</h1>
+                <h1 class="text_rectangle" style="position: relative;">View Books</h1>
             </div>
         </a>
     
         <a href="{{ route('addPage') }}" style="display: inline-block; text-decoration: none;">
             <div class="rectangle3 opposite-color" id="rectangle3" style="position: relative;">
-                <img src="🦆 icon _plus_.png" alt="" style="position: absolute; margin-bottom: 150px;">
-                <h1 class="text_rectangle">Add New Employees</h1>
+                <h1 class="text_rectangle">Add New Book</h1>
             </div>
         </a>
 
         <a href="{{ route('viewPage') }}" style="display: inline-block; text-decoration: none;">
             <div class="rectangle4 opposite-color" id="rectangle4" style="position: relative;">
-                <img src="🦆 icon _User Edit_.png" alt="" style="position: absolute; margin-left: 50px; margin-bottom: 190px;">
-                <h1 class="text_rectangle">Update Employees</h1>
+                <h1 class="text_rectangle">Update Books</h1>
             </div>
         </a>
     
